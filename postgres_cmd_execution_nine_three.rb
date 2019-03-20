@@ -17,13 +17,18 @@ class MetasploitModule < Msf::Exploit::Remote
       'Name' => 'PostgreSQL >9.3 Command Execution',
       'Description' => %q(
         Installations running Postgres 9.3 and above have functionality which allows for the superuser 
-        and users with 'pg_read_server_files' piping COPY to and from an external program. 
+        and users with 'pg_read_server_files' to pipe to and from an external program using COPY. 
         This allows arbitary command execution as though you have console access.
 
         This module attempts to create a new table, then execute system commands in the context of 
         copying the command output into the table.
 
         This module should work on all Postgres systems running version 9.3 and above. 
+
+        For Linux & OSX systems, cmd stagers are used such as: cmd/unix/reverse_perl
+
+        For Windows Systems command is placed in the COMMAND parameter, such as a powershell 
+        download cradle for meterpreter
       ),
       'Author' => [
         'Jacob Wilkin', # author of this module
