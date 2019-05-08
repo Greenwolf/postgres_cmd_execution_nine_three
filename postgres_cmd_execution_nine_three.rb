@@ -39,7 +39,7 @@ class MetasploitModule < Msf::Exploit::Remote
         ['URL', '<Blogpost on the subject>'],
         ['URL', 'https://www.postgresql.org/docs/9.3/release-9-3.html'] #Patch notes adding the function, see 'E.26.3.3. Queries - Add support for piping COPY and psql \copy data to/from an external program (Etsuro Fujita)'
       ],
-        'PayloadType' => %w(cmd)
+        'PayloadType' => %w(cmd),
       'Platform' => %w(linux unix win osx),
       'Payload' => {
       },
